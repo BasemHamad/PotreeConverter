@@ -230,9 +230,9 @@ namespace chunker_countsort_laszip {
 					int32_t Y = int32_t((y - posOffset.y) / posScale.y);
 					int32_t Z = int32_t((z - posOffset.z) / posScale.z);
 
-					double ux = (double(X) * posScale.x + posOffset.x - min.x) / size.x;
-					double uy = (double(Y) * posScale.y + posOffset.y - min.y) / size.y;
-					double uz = (double(Z) * posScale.z + posOffset.z - min.z) / size.z;
+					float ux = (double(X) * posScale.x + posOffset.x - min.x) / size.x;
+					float uy = (double(Y) * posScale.y + posOffset.y - min.y) / size.y;
+					float uz = (double(Z) * posScale.z + posOffset.z - min.z) / size.z;
 
 					bool inBox = ux >= 0.0 && uy >= 0.0 && uz >= 0.0;
 					inBox = inBox && ux <= 1.0 + DBL_EPSILON && uy <= 1.0 + DBL_EPSILON && uz <= 1.0 + DBL_EPSILON;
